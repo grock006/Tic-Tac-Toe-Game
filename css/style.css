@@ -132,6 +132,7 @@ input {
 
 .team_button:hover {
 	background-color: #550D0B;
+	outline: none;
 }
 
 .rectangle_button {
@@ -151,6 +152,7 @@ input {
 
 .rectangle_button:hover {
 	background-color: #777777;
+	outline: none;
 }
 
 #team_mcclane {

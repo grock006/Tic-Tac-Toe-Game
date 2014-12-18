@@ -2,39 +2,19 @@ var tictactoeApp = angular.module("tictactoeApp", []);
 
 tictactoeApp.controller('TictactoeContoller', ['$scope', function($scope){
 
-//newGame board
- $scope.row = [    {section:0, className: ""}, 
- 			       {section:1, className: ""}, 
- 				   {section:2, className: ""}, 
- 				   {section:3, className: ""}, 
- 				   {section:4, className: ""}, 
- 				   {section:5, className: ""}, 
- 				   {section:6, className: ""}, 
- 				   {section:7, className: ""}, 
- 				   {section:8, className: ""}];
-
- $scope.className = null;
- $scope.playerOne = true;
- $scope.playerTwo = false;
+ $scope.row = [{},{},{},{},{},{},{},{},{}];
  $scope.gameOver = "GAME OVER";
- // this.turn = x, set play to x, changes the ng-class square.play value
- // this.newGame = newGame;
 
  $scope.newGame = function(){
- 	$scope.row = [ {section:0, className: ""}, 
- 			       {section:1, className: ""}, 
- 				   {section:2, className: ""}, 
- 				   {section:3, className: ""}, 
- 				   {section:4, className: ""}, 
- 				   {section:5, className: ""}, 
- 				   {section:6, className: ""}, 
- 				   {section:7, className: ""}, 
- 				   {section:8, className: ""}];
+ 	  $scope.row = [{},{},{},{},{},{},{},{},{}];	  
  	  $scope.status = "";	
- 	  $scope.source = "";			   
+ 	  $scope.source = "";		   
  }
 
-//if there are 4 markerx than markerx wins, and vice versa
+ $scope.joinTeam = function(teamPick){
+ 	$scope.team = teamPick;
+ }
+
  $scope.checkScore = function(){
  	    if($scope.row[0].className == "markerx" && $scope.row[1].className == "markerx" && $scope.row[2].className == "markerx"){
  	    $scope.status = "YIPPIE KI YAY, MOTHERFUCKER!!!!!";	
@@ -102,29 +82,31 @@ tictactoeApp.controller('TictactoeContoller', ['$scope', function($scope){
  	    }
  	};
 
+ 	$scope.changeClass = function(row){
+ 		if($scope.team == "McClane" || $scope.team == "Gruber"){
 
- $scope.changeClass = function(row){
- 		if($scope.playerOne == true){
+ 		if($scope.team == "McClane"){
  		row.className = "markerx";
- 		$scope.playerOne = false;
  		}
- 		else {
+ 		else if($scope.team == "Gruber") {
  		   row.className = "markero";
- 		   $scope.playerOne = true;
  		}
- 	
+	}
 		$scope.checkScore();
-		$scope.displayWinner();
-
 	};
 
-	$scope.displayWinner = function(){
-		for(var i = 0; i > $scope.row.length; i++){
-			if($scope.row[i].className == "markerx" > 3){
-				$scope.winner = "TEAM MCCLANE WINS!"
-			}
-		}
-	}
+
+ // $scope.changeClass = function(row){
+ // 		if($scope.playerOne == true){
+ // 		row.className = "markerx";
+ // 		$scope.playerOne = false;
+ // 		}
+ // 		else {
+ // 		   row.className = "markero";
+ // 		   $scope.playerOne = true;
+ // 		}
+	// 	$scope.checkScore();
+	// };
  		
 }]);
 

@@ -57,14 +57,9 @@ h1 {
 
 .square:hover{
 	background-color: #EEEEEE;
+    border: 4px solid black;	
 }
 
-.rectangle {
-	height: 75px;
-	width: 250px;
-	border: 4px solid white;
-	margin-left: 5px;
-}
 
 .box {
 	width: 270px;
@@ -118,4 +113,57 @@ input {
 }
 .clear {
 	clear: both;
+}
+
+.team_button {
+	padding: 20px;
+	font-size: 15px;
+	font-family: futura;
+	color: white;
+	background-color: #AC1C16;
+	margin: 10px;
+	font-weight: bolder;
+	width: 50%;
+	border: 1px solid black;
+	text-shadow: 1px 1px black;
+	text-align: center;
+	cursor: pointer;
+}
+
+.team_button:hover {
+	background-color: #550D0B;
+}
+
+.rectangle_button {
+	font-size: 15px;
+	font-family: futura;
+	color: black;
+	background-color: #EEEEEE;
+	font-weight: bolder;
+	text-shadow: 1px 1px black;
+	text-align: center;
+	height: 75px;
+	width: 265px;
+	border: 4px solid black;
+	cursor: pointer;
+	outline: none;
+}
+
+.rectangle_button:hover {
+	background-color: #777777;
+}
+
+#team_mcclane {
+	width: 30%;
+	float: left;
+	border: 2px solid white;
+	margin-top: 10px;
+	outline: none;
+}
+#team_gruber {
+	width: 30%;
+	float: left;
+	border: 2px solid white;
+	margin-top: 10px;
+	outline: none;
 }

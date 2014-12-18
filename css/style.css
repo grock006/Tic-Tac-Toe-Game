@@ -1,0 +1,121 @@
+body {
+	/*background-image: url(../images/bg-1.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: 330px 160px;*/
+	color: white;
+	background-color: black;
+	font-family: futura;
+	font-weight: bolder;
+}
+
+/*h1 {
+	margin: 10px auto;
+	text-align: center;
+}*/
+
+h1 {
+	color: #AC1C16; /*#AA1B16;*/
+	font-size: 50px;
+	font-weight: 900;
+	margin: 0;
+	text-shadow: 2px 2px black;
+}
+
+ h2 {
+ 	font-size: 20px;
+ }
+
+ h3 {
+ 	margin: 0;
+ 	text-shadow: 2px 2px black;
+ }
+
+#logo {
+	width: 25%;
+}
+
+#logo_center {
+	margin: 40px auto;
+	text-align: center;
+}
+
+#nakatomi {
+	width: 3%;
+}
+
+.square {
+	height: 75px;
+	width: 75px;
+	border: 4px solid white;
+	color: white;
+	display: inline-block;
+	margin: 2px;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.square:hover{
+	background-color: #EEEEEE;
+}
+
+.rectangle {
+	height: 75px;
+	width: 250px;
+	border: 4px solid white;
+	margin-left: 5px;
+}
+
+.box {
+	width: 270px;
+	margin: 20px auto;
+	float: left;
+}
+#right_window {
+	width: 290px;
+ 	float: left;
+ 	padding-left: 20px;
+}
+
+#left_window {
+	width: 290px;
+	float: left;
+	padding-right: 20px; 
+}
+
+#game_container{
+	margin: 0 auto;
+	width: 900px;
+}
+
+.markerx {
+	background-image: url(../images/player_one.jpg);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+
+.markero {
+	background-image: url(../images/player_two.png);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+input {
+	width: 60%;
+	font-family: futura;
+	padding: 5px;
+	border-radius: 2px;
+}
+#status {
+	text-shadow: 1px 1px black;
+	font-size: 15px;
+	color: #AC1C16;
+/*	display: inline-block;*/
+	text-align: center;
+}
+
+.status-image {
+	width: 91%;
+}
+.clear {
+	clear: both;
+}

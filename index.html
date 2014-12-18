@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html ng-app="tictactoeApp">
+<head>
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/angular.min.js"></script>
+	<script src="js/test.js"></script>
+</head>
+	<body>
+
+	<div ng-controller="TictactoeContoller">
+
+	<div id="logo_center">  	
+	<img id="logo" src="images/logo.png"> 
+	<h1><strong>TIC TAC TOE</strong></h1> 
+	<h3>Welcome To Nakatomi Plaza</h3><img src="images/nakatomi.jpg" id="nakatomi">	
+	<div>
+
+	<div id="game_container">
+
+	<div id="left_window">
+		<input type="text" placeholder="Player One Enter Name" ng-model="playerOneName">
+		<h2>PLAYER: JOHN '{{playerOneName}}' MCCLANE</h2>
+		<button>TEAM MCCLANE</button>
+		<br>
+    	<input type="text" placeholder="Player Two Enter Name" ng-model="playerTwoName">
+    	<h2>PLAYER: HANS '{{playerTwoName}}' GRUBER</h2>
+    	<button>TEAM GRUBER</button>
+	</div>	
+	
+	<div class="box">  
+	<div ng-repeat="r in row" class="square" ng-class="r.className" ng-click="changeClass(r);">
+
+		<!-- {{r.className}} - {{r.section}} - {{$index}} - {{$parent}} -->
+
+	</div> 
+
+	<div class="rectangle">Start Game</div>
+	<div class="rectangle">New Game</div>
+    </div>
+
+    <div id="right_window">
+    		<div id="status">{{status}}</div>
+			<br>
+			<img ng-src="{{source}}" ng-show="status.length > 0" class="status-image">
+    </div>
+
+    </div>
+
+    <div class="clear"></div>
+
+  </div>
+
+
+	</body>
+</html>

@@ -8,11 +8,14 @@ tictactoeApp.controller('TictactoeContoller', ['$scope', function($scope){
  $scope.newGame = function(){
  	  $scope.row = [{},{},{},{},{},{},{},{},{}];	  
  	  $scope.status = "";	
- 	  $scope.source = "";		   
+ 	  $scope.source = "";
+ 	  $scope.team = "";
+ 	  $scope.turn = "";		   
  }
 
  $scope.joinTeam = function(teamPick){
  	$scope.team = teamPick;
+ 	$scope.turn = teamPick;
  }
 
  $scope.checkScore = function(){
@@ -84,13 +87,18 @@ tictactoeApp.controller('TictactoeContoller', ['$scope', function($scope){
 
  	$scope.changeClass = function(row){
  		if($scope.team == "McClane" || $scope.team == "Gruber"){
+ 			if($scope.team === $scope.turn){
 
  		if($scope.team == "McClane"){
  		row.className = "markerx";
+ 		$scope.turn = "Gruber";
  		}
  		else if($scope.team == "Gruber") {
  		   row.className = "markero";
+ 		   scope.turn = "McClane";
  		}
+	  }
+
 	}
 		$scope.checkScore();
 	};

@@ -1,8 +1,8 @@
 body {
-	/*background-image: url(../images/bg-1.jpg);
+	background-image: url(../images/bg-1.jpg);
 	background-size: cover;
 	background-repeat: no-repeat;
-	background-position: 330px 160px;*/
+	background-position: 30px 0px;
 	color: white;
 	background-color: black;
 	font-family: futura;
@@ -28,7 +28,9 @@ h1 {
 
  h3 {
  	margin: 0;
- 	text-shadow: 2px 2px black;
+ 	text-shadow: 1px 1px black;
+ 	color: #AC1C16;
+ 	font-size: 20px;
  }
 
 #logo {

@@ -2,6 +2,7 @@
 <html ng-app="tictactoeApp">
 <head>
 	<title>Die Hard: Tic Tac Toe</title>
+	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/style.css">
 	<script src="js/angular.min.js"></script>
 
@@ -26,7 +27,7 @@
 	<div id="game_container">
 
 	<div id="left_window">
-		<h3>CHOOSE YOUR TEAM</h3>
+		<h3>{{choose}}</h3>
     	<img id="team_mcclane" src="images/team_mcclane.jpg">
     	<button class="team_button" ng-click="joinTeam('McClane');">TEAM MCCLANE</button>
      <div class="clear"></div>
@@ -36,10 +37,12 @@
     	<br>
     	<h3 ng-show="team.length > 0">Your Team: <br> {{team}}</h3>
 	</div>	
+
+	<!-- start game button up top -->
 	
 	<div class="box">  
+		<button class="rectangle_button" ng-click="startGame();">START GAME</button>
 	<div ng-repeat="r in row" class="square" ng-class="r.className" ng-click="changeClass(r);">
-
 	</div> 
 		<button class="rectangle_button" ng-click="newGame();">NEW GAME</button>
     </div>

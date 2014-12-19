@@ -172,3 +172,7 @@ input {
 	margin-top: 10px;
 	outline: none;
 }
+
+#player_score {
+	color: #AC1C16;;
+}

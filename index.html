@@ -24,7 +24,7 @@
 	<div id="game_container">
 
 	<div id="left_window">
-		<h3>{{ttt.choose}}</h3>
+		<h3>{{ttt.game.choose}}</h3>
     	<img id="team_mcclane" src="images/player_one.jpg">
     	<button class="team_button" ng-click="ttt.joinTeam('McClane');">TEAM MCCLANE</button>
      <div class="clear"></div>
@@ -32,14 +32,20 @@
     	<button class="team_button" ng-click="ttt.joinTeam('Gruber');">TEAM GRUBER</button>
     	<br>
     	<br>
-    	<h3 ng-show="ttt.team.length > 0">Your Team: <br> {{ttt.team}}</h3>
+    	<h3 ng-show="ttt.game.team.length > 0">Your Team: <br> {{ttt.game.team}}</h3>
 	</div>	
 
 	
 	<div class="box">  
 		<button class="rectangle_button" ng-click="ttt.startGame();">START GAME</button>
-	<div ng-repeat="r in ttt.row" class="square" ng-class="r.className" ng-click="ttt.changeScore(r);">
+	
+	<!-- Game Board -->
+	
+	<div ng-repeat="r in ttt.game.row" class="square" ng-class="r.className" ng-click="ttt.changeScore(r);">
 	</div> 
+
+	<!-- End Game Board -->
+	
 		<button class="rectangle_button" ng-click="ttt.newGame();">NEW GAME</button>
     </div>
 
@@ -48,8 +54,8 @@
 			<br>
 			<img ng-src="{{ttt.source}}" ng-show="ttt.status.length > 0" class="status-image">
 			<h2 ng-show="ttt.status.length >0">{{ttt.gameOver}}</h2>
-			<h2 ng-show="ttt.status.length >0">NYPD COP AT L.A. CHRISTMAS PARTY:{{ttt.mcclaneWins}}</h2>
-			<h2 ng-show="ttt.status.length >0">BANKROBBERS PRETENDING TO BE TERRORISTS: {{ttt.hansWins}}</h2>
+			<h2 ng-show="ttt.status.length >0">NYPD COP AT L.A. CHRISTMAS PARTY: <span id="player_score">{{ttt.mcclaneWins}}</span></h2>
+			<h2 ng-show="ttt.status.length >0">BANKROBBERS PRETENDING TO BE TERRORISTS: <span id="player_score">{{ttt.hansWins}}</span></h2>
     </div>
 
     </div>

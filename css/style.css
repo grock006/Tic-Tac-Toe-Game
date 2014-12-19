@@ -2,7 +2,7 @@ body {
 	background-image: url(../images/bg-1.jpg);
 	background-size: cover;
 	background-repeat: no-repeat;
-	background-position: -200px 0px;
+	background-position: -250px 0px;
 	color: white;
 	background-color: black;
 	font-family: futura;
@@ -49,6 +49,7 @@ h1 {
 	margin: 2px;
 	border-radius: 5px;
 	cursor: pointer;
+	transition: background-color 0.1s ease-out;
 }
 
 .square:hover{
@@ -71,12 +72,14 @@ h1 {
 #left_window {
 	width: 290px;
 	float: left;
-	padding-right: 20px; 
+	padding-right: 10px; 
+	margin-left: 60px;
+	padding-top: 12px;
 }
 
 #game_container{
 	margin: 0 auto;
-	width: 900px;
+	width: 1000px;
 }
 
 .markerx {
@@ -124,11 +127,13 @@ input {
 	text-shadow: 1px 1px black;
 	text-align: center;
 	cursor: pointer;
+	transition: box-shadow 0.1s ease;
 }
 
 .team_button:hover {
 	background-color: #550D0B;
 	outline: none;
+	box-shadow: inset 0 0 0 7px #EEEEEE;
 }
 
 .rectangle_button {
@@ -144,11 +149,13 @@ input {
 	border: 4px solid black;
 	cursor: pointer;
 	outline: none;
+	transition: box-shadow 0.1s ease;
 }
 
 .rectangle_button:hover {
 	background-color: #777777;
 	outline: none;
+	box-shadow: inset 0 0 0 7px #EEEEEE;
 }
 
 #team_mcclane {

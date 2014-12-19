@@ -11,12 +11,14 @@
 	
 	<!--<script src="js/test.js"></script>-->
 
-	<script src="js/main.js"></script>
+	<!--<script src="js/main.js"></script>-->
 	<script src="js/TictactoeController.js"></script>
 </head>
 	<body>
 
-	<div ng-controller="TictactoeController">
+	<div ng-controller="TictactoeController as ttt">
+
+		{{ttt.hello}}
 
 	<div id="logo_center">  	
 	<img id="logo" src="images/logo.png"> 

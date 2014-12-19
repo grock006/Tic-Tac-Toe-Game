@@ -1,6 +1,6 @@
 var tictactoeApp = angular.module("tictactoeApp", []);
 
-tictactoeApp.controller('TictactoeContoller', ['$scope', function($scope){
+tictactoeApp.controller('TictactoeController', ['$scope', function($scope){
 
  $scope.row = [{},{},{},{},{},{},{},{},{}];
  $scope.gameOver = "GAME OVER";

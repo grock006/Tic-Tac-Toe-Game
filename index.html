@@ -27,9 +27,12 @@
 		<h3>{{ttt.game.choose}}</h3>
     	<img id="team_mcclane" src="images/player_one.jpg">
     	<button class="team_button" ng-click="ttt.joinTeam('McClane');">TEAM MCCLANE</button>
+    
      <div class="clear"></div>
     	<img id="team_gruber" src="images/player_two.png">
     	<button class="team_button" ng-click="ttt.joinTeam('Gruber');">TEAM GRUBER</button>
+      
+     <div class="clear"></div>
     	<br>
     	<br>
     	<h3 ng-show="ttt.game.team.length > 0"><span id="team_turn">CURRENTLY SELECTED:<br></span>TEAM {{ttt.game.team | uppercase }}</h3>

@@ -32,7 +32,9 @@
     	<button class="team_button" ng-click="ttt.joinTeam('Gruber');">TEAM GRUBER</button>
     	<br>
     	<br>
-    	<h3 ng-show="ttt.game.team.length > 0">Your Team: <br> {{ttt.game.team}}</h3>
+    	<h3 ng-show="ttt.game.team.length > 0"><span id="team_turn">CURRENTLY SELECTED:<br></span>TEAM {{ttt.game.team | uppercase }}</h3>
+    	<h3 ng-show="ttt.game.turn == 'Gruber'"><span id="team_turn">Hans, <em>bubbe,</em> it's your TURN.</span></h3>
+    	<h3 ng-show="ttt.game.turn == 'McClane'"><span id="team_turn">Come on, John boy,<em> think!</em> it's your TURN.</span></h3>
 	</div>	
 
 	

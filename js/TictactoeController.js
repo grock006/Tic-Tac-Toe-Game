@@ -8,7 +8,7 @@ var app = angular.module('tictactoeApp', ['firebase']);
 		  var controller = this;
 
 		  controller.game = getGameObject();
-		  controller.game.row = [{a:1},{a:1},{a:1},{a:1},{a:1},{a:1},{a:1},{a:1},{a:1}];
+		  controller.row = [{a:1},{a:1},{a:1},{a:1},{a:1},{a:1},{a:1},{a:1},{a:1}];
 		  controller.game.choose = "";
 		  controller.gameOver = "GAME OVER";
 
@@ -139,19 +139,17 @@ var app = angular.module('tictactoeApp', ['firebase']);
 		 			console.log(controller.game.team);
 		 		if(controller.game.team == "McClane" || controller.game.team == "Gruber"){
 		 			if(controller.game.team == controller.game.turn){
-		 			    if(row.className !== "markerx" || row.className !== "markero"){
 
+		 			    if(row.className !== "markerx" || row.className !== "markero"){
 		 					if(controller.game.team == "McClane"){
 		 						row.className = "markerx";
 		 		    			controller.game.turn = "Gruber";
 		 					}
-		 					if(controller.game.team == "Gruber") {
+		 					else if(controller.game.team == "Gruber") {
 		 		   				row.className = "markero";
 		 		   				controller.game.turn = "McClane";	
 		 					} 
-		 					console.log(controller.game.team)
-
-		 				}
+		 				}		 					
 			  	    }
 				 }
 				controller.game.$save();	

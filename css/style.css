@@ -29,9 +29,12 @@ h1 {
 
  h3.turn {
  	margin: 0;
+ 	padding: 10px 0;
  	text-shadow: 1px 1px black;
  	color: #AC1C16;
- 	font-size: 24px;
+ 	font-size: 15px;
+ 	text-align: center;
+	border: 2px solid #AC1C16;;
  }
 
 #logo {

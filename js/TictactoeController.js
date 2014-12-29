@@ -11,6 +11,7 @@ var app = angular.module('tictactoeApp', ['firebase']);
 		  controller.row = [{a:1},{a:1},{a:1},{a:1},{a:1},{a:1},{a:1},{a:1},{a:1}];
 		  controller.game.choose = "";
 		  controller.gameOver = "GAME OVER";
+		  controller.game.inProcess = false;
 
 		  controller.newGame = newGame;
 		  controller.joinTeam = joinTeam;
@@ -35,6 +36,8 @@ var app = angular.module('tictactoeApp', ['firebase']);
 			controller.game.choose = "GAME IN PROGRESS: CHOOSE YOUR TEAM";
 			controller.game.message = "";
 			controller.game.turnCounter = 0;
+			controller.game.button = false;
+			controller.game.inProcess = true;
 			controller.game.$save();
 		 }
 
@@ -46,6 +49,7 @@ var app = angular.module('tictactoeApp', ['firebase']);
 		 	  controller.game.turn = "";
 		 	  controller.game.choose = "";
 		 	  controller.game.message ="";
+		 	  controller.game.button = false;
 		 	  controller.game.$save();		   
 		 }
 
@@ -62,11 +66,22 @@ var app = angular.module('tictactoeApp', ['firebase']);
 
 		 }
 
+		 function stopGame(){
+		 			controller.game.turn = null;
+		 			controller.game.turn = null;
+		 			controller.game.choose = null;
+		 	  	controller.game.message = null;
+		 	  	controller.game.button = true;
+		 	  	controller.game.inProcess = false;
+		 	  	controller.game.$save();
+		 }
+
 		 function checkScore(){
 		 	    if(controller.game.row[0].className == "markerx" && controller.game.row[1].className == "markerx" && controller.game.row[2].className == "markerx"){
 		 	    controller.status = "YIPPIE KI YAY, MOTHERFUCKER!!!!!";	
 		 	    controller.source = "images/one_wins.gif";
 		 	    controller.mcclaneWins++;
+		 	    stopGame();
 		 	    }
 		 	    else if(controller.game.row[3].className == "markerx" && controller.game.row[4].className == "markerx" && controller.game.row[5].className == "markerx"){
 		 	    controller.status = "YIPPIE KI YAY, MOTHERFUCKER!!!!!";	

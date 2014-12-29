@@ -27,6 +27,13 @@ h1 {
  	font-size: 20px;
  }
 
+ h3.turn {
+ 	margin: 0;
+ 	text-shadow: 1px 1px black;
+ 	color: #AC1C16;
+ 	font-size: 24px;
+ }
+
 #logo {
 	width: 25%;
 }

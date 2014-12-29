@@ -31,9 +31,10 @@ var app = angular.module('tictactoeApp', ['firebase']);
 		 	controller.game.status = "";	
 		 	controller.game.source = "";
 			controller.game.team = "";
-			controller.game.turn = "";
+			controller.game.turn = "McClane";
 			controller.game.choose = "GAME IN PROGRESS: CHOOSE YOUR TEAM";
-			console.log(controller.game)
+			controller.game.message = "";
+			controller.game.turnCounter = 0;
 			controller.game.$save();
 		 }
 
@@ -44,12 +45,21 @@ var app = angular.module('tictactoeApp', ['firebase']);
 		 	  controller.game.team = "";
 		 	  controller.game.turn = "";
 		 	  controller.game.choose = "";
+		 	  controller.game.message ="";
 		 	  controller.game.$save();		   
 		 }
 
 		 function joinTeam(teamPick){
-		 	controller.game.team = teamPick;
-		 	controller.game.turn = teamPick;
+		 		controller.game.team = teamPick;
+		 		if(controller.game.turn == controller.game.turn){
+		 		controller.game.team = teamPick;
+		 		controller.game.message = "";
+		 		controller.game.turnCounter++;
+		 		}
+		 		else{
+		 			controller.game.message = "It's Not Your Turn!";
+		 		}
+
 		 }
 
 		 function checkScore(){
@@ -133,10 +143,13 @@ var app = angular.module('tictactoeApp', ['firebase']);
 		 	    controller.source = "images/two_wins3.gif";
 		 	    controller.hansWins++;
 		 	    }
+		 	    else if(controller.game.turnCounter == 9){
+		 	    	controller.status = "Hey, business is business. You use a gun, I use a fountain pen what's the difference?" 
+		 	    	controller.source = "images/tie.gif";
+		 	    }
 		 	};
 
 		 	function changeScore(row){
-		 			console.log(controller.game.team);
 		 		if(controller.game.team == "McClane" || controller.game.team == "Gruber"){
 		 			if(controller.game.team == controller.game.turn){
 
@@ -151,9 +164,13 @@ var app = angular.module('tictactoeApp', ['firebase']);
 		 					} 
 		 				}		 					
 			  	    }
+			  	    else{
+			  	    	controller.game.message = "It's Not Your Turn!";
+			  	    }
 				 }
 				controller.game.$save();	
 				controller.checkScore();
+				console.log(controller.game.turnCounter);
 			};
 
 

@@ -35,12 +35,13 @@ var app = angular.module('tictactoeApp', ['firebase']);
 		 	controller.game.status = "";	
 		 	controller.game.source = "";
 			controller.game.team = "";
-			controller.game.turn = "McClane";
-			controller.game.choose = "GAME IN PROGRESS: CHOOSE YOUR TEAM";
+			controller.game.turn = "Gruber";
+			controller.game.choose = "GAME IN PROGRESS: GRUBER ALWAYS MAKES THE FIRST MOVE";
 			controller.game.message = "";
 			controller.game.turnCounter = 0;
 			controller.game.button = false;
 			controller.game.inProcess = true;
+			controller.game.boardButton = false;
 			controller.game.$save();
 		 }
 
@@ -57,6 +58,7 @@ var app = angular.module('tictactoeApp', ['firebase']);
 		 }
 
 		 function joinTeam(teamPick){
+		 		  console.log("Hello World");
 		 		controller.game.team = teamPick;
 		 		if(controller.game.turn == controller.game.turn){
 		 		controller.game.team = teamPick;
@@ -75,8 +77,11 @@ var app = angular.module('tictactoeApp', ['firebase']);
 		 	  	controller.game.message = null;
 		 	  	controller.game.button = true;
 		 	  	controller.game.inProcess = false;
+		 	  	controller.game.boardButton = true;
 		 	  	controller.game.totalGames++;
+		 	  	controller.game.$save();
 		 }
+
 
 		 function checkScore(){
 		 	    if(controller.game.row[0].className == "markerx" && controller.game.row[1].className == "markerx" && controller.game.row[2].className == "markerx"){
@@ -176,7 +181,7 @@ var app = angular.module('tictactoeApp', ['firebase']);
 		 	      stopGame();
 		 	    }
 		 	    else if(controller.game.turnCounter == 9){
-		 	    	controller.status = "Hey, business is business. You use a gun, I use a fountain pen what's the difference?" 
+		 	    	controller.status = "TIE GAME: Hey, business is business. You use a gun, I use a fountain pen what's the difference?" 
 		 	    	controller.source = "images/tie.gif";
 		 	    	controller.game.tieScore++;
 		 	    	  stopGame();

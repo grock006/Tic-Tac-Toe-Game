@@ -63,8 +63,13 @@
     		<h2 id="status" ng-show="ttt.status.length >0">"{{ttt.status}}"</h2>
 			<br>
 			<img ng-src="{{ttt.source}}" ng-show="ttt.status.length > 0" class="status-image">
-			<h2 ng-show="ttt.status.length >0">NYPD COP AT L.A. CHRISTMAS PARTY: <span id="player_score">{{ttt.mcclaneWins}}</span></h2>
-			<h2 ng-show="ttt.status.length >0">BANKROBBERS PRETENDING TO BE TERRORISTS: <span id="player_score">{{ttt.hansWins}}</span></h2>
+			<h2 ng-show="ttt.status.length >0">NYPD COP AT L.A. CHRISTMAS PARTY: <span id="player_score">{{ttt.game.mcclaneWins}}</span></h2>
+			<h2 ng-show="ttt.status.length >0">BANKROBBERS PRETENDING TO BE TERRORISTS: <span id="player_score">{{ttt.game.hansWins}}</span></h2>
+
+			<h2 ng-show="ttt.status.length >0">TIE GAME: <span id="player_score">{{ttt.game.tieScore}}</span></h2>
+
+
+			<h2 ng-show="ttt.status.length >0">TOTAL GAMES PLAYED: <span id="player_score">{{ttt.game.totalGames}}</span></h2>
     </div>
 
     </div>

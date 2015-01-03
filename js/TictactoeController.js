@@ -18,6 +18,7 @@ var app = angular.module('tictactoeApp', ['firebase']);
 		  controller.startGame = startGame;
 		  controller.checkScore = checkScore;
 		  controller.changeScore = changeScore;
+		  controller.newScore = newScore;
 		
 		  controller.game.hansWins = 0;
 		  controller.game.mcclaneWins = 0;
@@ -57,8 +58,16 @@ var app = angular.module('tictactoeApp', ['firebase']);
 		 	  controller.game.$save();		   
 		 }
 
+		 function newScore(){
+		 	console.log("Working")
+		 	controller.game.hansWins = 0;
+		  	controller.game.mcclaneWins = 0;
+		  	controller.game.tieScore = 0;
+		  	controller.game.totalGames = 0;
+		  	  controller.game.$save();	
+		 }
+
 		 function joinTeam(teamPick){
-		 		  console.log("Hello World");
 		 		controller.game.team = teamPick;
 		 		if(controller.game.turn == controller.game.turn){
 		 		controller.game.team = teamPick;
@@ -68,7 +77,6 @@ var app = angular.module('tictactoeApp', ['firebase']);
 		 		else{
 		 			controller.game.message = "It's Not Your Turn!";
 		 		}
-
 		 }
 
 		 function stopGame(){

@@ -71,6 +71,7 @@
 			<h2 ng-show="ttt.status.length >0">BANKROBBERS PRETENDING TO BE TERRORISTS: <span id="player_score">{{ttt.game.hansWins}}</span></h2>
 			<h2 ng-show="ttt.status.length >0">TIE GAME: <span id="player_score">{{ttt.game.tieScore}}</span></h2>
 			<h2 ng-show="ttt.status.length >0">TOTAL GAMES PLAYED: <span id="player_score">{{ttt.game.totalGames}}</span></h2>
+			<button ng-show="ttt.status.length >0" ng-click="ttt.newScore();" class="team_button">RESET SCORES</button>
 
     </div>
 
